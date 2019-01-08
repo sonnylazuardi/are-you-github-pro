@@ -14,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "isomorphic-fetch": "^2.2.1",
     "next": "^6.1.1",
