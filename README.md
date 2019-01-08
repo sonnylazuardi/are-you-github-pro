@@ -23,6 +23,14 @@ yarn
 yarn run dev
 ```
 
+## Prototype
+
+I build the prototype using Framer X and React JS. You can download the prototype here:
+
+![ss](ss.png)
+
+[Download FramerX Project](githubprofile.framerx)
+
 ## Roadmap
 
 - [x] check pro user from username
