@@ -21,6 +21,7 @@
     "next": "^6.1.1",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-github-corner": "^2.3.0",
     "react-native-web": "^0.10.0-alpha.1",
     "react-overdrive": "^0.0.10",
     "react-spinners": "^0.5.1"

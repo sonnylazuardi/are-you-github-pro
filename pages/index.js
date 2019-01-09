@@ -3,7 +3,7 @@ import Router from 'next/router';
 import Overdrive from 'react-overdrive';
 import Head from 'next/head';
 import { SyncLoader } from 'react-spinners';
-import { timingSafeEqual } from 'crypto';
+import GithubCorner from 'react-github-corner';
 
 class Index extends React.Component {
   state = {
@@ -118,6 +118,7 @@ class Index extends React.Component {
               </button>
             )}
           </form>
+          <GithubCorner href="https://github.com/sonnylazuardi/are-you-github-pro" />
         </div>
         <style jsx global>{`
           @font-face {
@@ -306,7 +307,7 @@ class Index extends React.Component {
 
 Index.getInitialProps = async function({ query, req }) {
   const { username } = query;
-  const baseUrl = req ? `http://${req.get('Host')}` : '';
+  const baseUrl = req ? `https://${req.get('Host')}` : '';
   if (!username) return { isGithubPro: false, user: null, data: null };
   const gdomQuery = `
     {
