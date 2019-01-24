@@ -92,7 +92,7 @@ class Index extends React.Component {
                   <Overdrive id="github-pro-status" duration={500}>
                     <div>
                       <div className="input-large">
-                        <img src={data.image[0].source.replace('s=460', 's=150')} className="display-picture" />
+                        <img src={data.image.replace('s=460', 's=150')} className="display-picture" />
                         <div className="profile-title">{data.name}</div>
                         <div className="profile-country">{data.country}</div>
                       </div>
@@ -313,11 +313,9 @@ Index.getInitialProps = async function({ query, req }) {
     {
       page(url:"https://github.com/${username}") {
         name: text(selector: ".p-name.vcard-fullname.d-block.overflow-hidden")
-        image: query(selector: ".avatar.width-full.rounded-2") {
-          source: attr(name: "src")
-        }
+        image: attr(selector: ".avatar.width-full", name: "src")
         country: text(selector: ".p-label")
-        pro: text(selector: ".label.bg-purple.text-uppercase")
+        notpro: text(selector: ".d-none>.label.bg-purple.text-uppercase")
       }
     }
   `;
@@ -331,7 +329,7 @@ Index.getInitialProps = async function({ query, req }) {
     body: JSON.stringify({ query: gdomQuery }),
   });
   const result = await res.json();
-  return { isGithubPro: result.data.page.pro != '', data: result.data.page, user: username, result };
+  return { isGithubPro: result.data.page.notpro == '', data: result.data.page, user: username, result };
 };
 
 export default Index;
