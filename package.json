@@ -2,10 +2,10 @@
   "name": "are-you-github-pro",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "functions/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "next build",
+    "build": "next build && netlify-lambda build",
     "export": "next export",
     "dev": "node server.js",
     "start": "NODE_ENV=production node server.js",
@@ -27,5 +27,9 @@
     "react-native-web": "^0.10.0-alpha.1",
     "react-overdrive": "^0.0.10",
     "react-spinners": "^0.5.1"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.508.0",
+    "netlify-lambda": "^1.5.1"
   }
 }
